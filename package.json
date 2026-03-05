@@ -1,0 +1,12 @@
+{
+  "name": "ai-autocorrect-tool",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && python -m uvicorn main:app --reload"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
