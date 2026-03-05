@@ -18,7 +18,7 @@ function App() {
     setKeyChanges([]);
 
     try {
-      const response= await fetch("https://ai-autocorrect-tool.onrender.com/correct",{
+      const response= await fetch("https://ai-autocorrect-tool.onrender.com/api/correct",{
         method:"POST",
         headers: {
           "Content-Type":"application/json",
@@ -107,7 +107,7 @@ function App() {
         <span className="text-gray-500 text-[10px] font-bold uppercase tracking-widest mb-2 block"> Key Changes </span>
         <div className="flex flex-wrap gap-2">
         {keyChanges.map((change, index) => (
-        <div key={index} className="bg-green-500/10 text-green-400 text-[10px] font-bold px-2 py-1 rounded border border-green-500/20 uppercase"> {change} </div>
+        <div key={index} className="bg-green-500/10 text-green-400 text-[10px] font-bold px-2 py-1 rounded border border-green-500/20"> {change} </div>
         ))}
         </div>
         </div>
