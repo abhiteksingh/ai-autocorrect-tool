@@ -18,7 +18,7 @@ function App() {
     setKeyChanges([]);
 
     try {
-      const response= await fetch("http://localhost:8000/api/correct",{
+      const response= await fetch("https://ai-autocorrect-tool.onrender.com/correct",{
         method:"POST",
         headers: {
           "Content-Type":"application/json",
@@ -83,13 +83,14 @@ function App() {
         <div className="flex items-center justify-between gap-x-4">
         <div className="flex-1">
           <label className="text-blue-400 text-xs font-black uppercase tracking-widest mb-3 block">Select Tone </label>
-          <select className="w-full appearance-none bg-black/40 border border-white/10 rounded-lg p-3 text-sm text-white/80 focus:outline-none focus:ring-1 focus:ring-blue-500/50 cursor-pointer hover:bg-black/60 transition-all">
+          <select 
+            value={tone}
+            onChange={(e) => setTone(e.target.value)}
+            className="w-full appearance-none bg-black/40 border border-white/10 rounded-lg p-3 text-sm text-white/80 focus:outline-none focus:ring-1 focus:ring-blue-500/50 cursor-pointer hover:bg-black/60 transition-all">
             <option class="bg-zinc-900 text-white">Casual</option>
             <option class="bg-zinc-900 text-white">Formal</option>
             <option class="bg-zinc-900 text-white">Professional</option>
             <option class="bg-zinc-900 text-white">Creative</option>
-            value={tone}
-            onChange={(e) => setTone(e.target.value)}
           </select>
         </div>
         <button onClick={handleCorrectText} disabled={isLoading} className="bg-blue-600 hover:bg-blue-500 text-white font-black uppercase text-xs px-8 h-[46px] rounded-lg self-end transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)]">
